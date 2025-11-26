@@ -126,7 +126,7 @@ describe('calculateContrastColor', () => {
   });
 
   it('handles getImageData errors gracefully', () => {
-    const consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => { });
+    const consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     const ctx = {
       getImageData: () => {
         throw new Error('getImageData failed');

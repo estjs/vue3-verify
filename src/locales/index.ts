@@ -1,6 +1,6 @@
 import { type ComputedRef, computed } from 'vue';
-import zhCN from './zh-CN';
-import enUS from './en-US';
+import zhCN from './zh-cn';
+import enUS from './en-us';
 
 export type LocaleType = 'zh-CN' | 'en-US';
 

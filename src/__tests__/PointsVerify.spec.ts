@@ -193,7 +193,7 @@ describe('pointsVerify', () => {
       }
     });
 
-    it('should trigger verify after checkNum clicks', async () => {
+    it('should trigger verify after checkNum clicks', () => {
       const wrapper = mount(PointsVerify, {
         props: { checkNum: 2 },
       });

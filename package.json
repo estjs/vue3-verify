@@ -37,6 +37,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --fix",
+    "typecheck": "vue-tsc --noEmit",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",

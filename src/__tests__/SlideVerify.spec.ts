@@ -67,18 +67,18 @@ describe('slideVerify', () => {
 
     it('accepts barSize prop', () => {
       const wrapper = mount(SlideVerify, {
-        props: { barSize: { width: 300, height: 50 } },
+        props: { barSize: { width: '300px', height: '50px' } },
       });
 
-      expect(wrapper.props('barSize')).toEqual({ width: 300, height: 50 });
+      expect(wrapper.props('barSize')).toEqual({ width: '300px', height: '50px' });
     });
 
     it('accepts blockSize prop', () => {
       const wrapper = mount(SlideVerify, {
-        props: { blockSize: { width: 50, height: 50 } },
+        props: { blockSize: { width: '50px', height: '50px' } },
       });
 
-      expect(wrapper.props('blockSize')).toEqual({ width: 50, height: 50 });
+      expect(wrapper.props('blockSize')).toEqual({ width: '50px', height: '50px' });
     });
   });
 
