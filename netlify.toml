@@ -3,8 +3,8 @@
   NODE_VERSION = "22"
 
 [build]
-  publish = "dist"
-  command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build && npx pnpm run examples"
+  publish = "examples/dist"
+  command = "pnpm run -C examples build"
 
 [[redirects]]
   from = "/*"
