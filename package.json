@@ -35,15 +35,13 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "lint": "eslint src",
+    "build": "vite build",
+    "lint": "eslint src --fix",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui",
-    "test:e2e:headed": "playwright test --headed",
-    "test:e2e:debug": "playwright test --debug"
+    "release": "pnpm run build && bumpp package.json  --no-git-checks --commit --push --tag && pnpm publish --access public"
   },
   "dependencies": {
     "vue": "^3.5.25"
@@ -55,6 +53,7 @@
     "@vitest/coverage-v8": "^4.0.13",
     "@vitest/ui": "^4.0.13",
     "@vue/test-utils": "^2.4.6",
+    "bumpp": "^10.2.3",
     "eslint": "^9.39.1",
     "happy-dom": "^20.0.10",
     "jsdom": "^27.2.0",
