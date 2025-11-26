@@ -1,9 +1,9 @@
 <template>
-  <component :is="comp" v-if="comp" v-bind="computedProps" ref="componentRef" />
+  <component :is="comp" v-if="comp" v-bind="props" ref="componentRef" />
 </template>
 
 <script setup lang="ts">
-import { computed, ref, shallowRef, useAttrs, watch } from 'vue';
+import { ref, shallowRef, watch } from 'vue';
 import SlideVerify from './SlideVerify.vue';
 import PointsVerify from './PointsVerify.vue';
 import CodeVerify from './CodeVerify.vue';
@@ -21,7 +21,6 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const componentRef = ref();
-const attrs = useAttrs();
 
 const comp = shallowRef();
 const map: Record<string, any> = {
@@ -31,20 +30,6 @@ const map: Record<string, any> = {
   puzzle: SlideVerify,
   pick: PointsVerify,
 };
-
-const computedProps = computed(() => {
-  const baseProps = {
-    ...attrs,
-    locale: props.locale,
-  };
-
-  switch (props.type) {
-    case 'pick':
-      return baseProps;
-    default:
-      return { ...baseProps, mode: props.type };
-  }
-});
 
 watch(
   () => props.type,
