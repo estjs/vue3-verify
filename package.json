@@ -1,6 +1,6 @@
 {
   "name": "vue3-verify",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "packageManager": "pnpm@10.23.0",
   "description": "Vue 3 verification component library",
   "type": "module",
