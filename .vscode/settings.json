@@ -1,0 +1,23 @@
+{
+  "prettier.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "cSpell.userWords": [
+    "esbuild",
+    "esno",
+    "estjs",
+    "iconify",
+    "unocss",
+    "unplugin",
+    "vite",
+    "vitejs",
+    "vitepress",
+    "vitest",
+    "vueuse"
+  ],
+  "i18n-ally.localesPaths": ["src/i18n"]
+}
