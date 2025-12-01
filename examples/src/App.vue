@@ -69,7 +69,13 @@
         </div>
         <div class="demo-box">
           <div style="display: flex; gap: 20px; align-items: center">
-            <Verify ref="codeVerifyRef" type="picture" @ready="onCodeReady" />
+            <Verify
+              ref="codeVerifyRef"
+              type="picture"
+              :width="299"
+              :height="100"
+              @ready="onCodeReady"
+            />
             <div>
               <input
                 v-model="codeInput"

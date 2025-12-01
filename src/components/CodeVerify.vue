@@ -10,7 +10,7 @@ import { randomCode, randomColor, randomInt } from '../utils';
 import type { LocaleType } from '../locales';
 
 interface Props {
-  mode?: 'picture' | 'compute';
+  type?: 'picture' | 'compute';
   width?: number | string;
   height?: number | string;
   figure?: number; // 计算公式的位数
@@ -19,7 +19,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  mode: 'picture',
+  type: 'picture',
   width: 116,
   height: 34,
   figure: 100,
@@ -42,14 +42,14 @@ const showSuccess = ref(false);
 // Canvas尺寸 - 支持数字和百分比
 const canvasWidth = computed(() => {
   if (typeof props.width === 'string') {
-    return props.mode === 'compute' ? 320 : 116;
+    return props.type === 'compute' ? 320 : 116;
   }
   return Number(props.width);
 });
 
 const canvasHeight = computed(() => {
   if (typeof props.height === 'string') {
-    return props.mode === 'compute' ? 45 : 38;
+    return props.type === 'compute' ? 45 : 38;
   }
   return Number(props.height);
 });
@@ -67,7 +67,7 @@ function draw() {
   ctx.fillStyle = randomColor(200, 220);
   ctx.fillRect(0, 0, w, h);
 
-  if (props.mode === 'compute') {
+  if (props.type === 'compute') {
     // 计算模式
     drawCompute(ctx, w, h);
   } else {
@@ -94,7 +94,7 @@ function drawPicture(ctx: CanvasRenderingContext2D, w: number, h: number) {
     ctx.save();
     ctx.font = `bold ${randomInt(25, 35)}px Arial`;
     ctx.fillStyle = randomColor(30, 130);
-    ctx.translate(15 + i * 25, 25);
+    ctx.translate(w / 5 + i * (w / 5) - 2, h / 2 + 6);
     ctx.rotate((Math.random() - 0.5) * 0.4);
     ctx.fillText(char, 0, 0);
     ctx.restore();
